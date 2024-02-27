@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Kazifi",
+  "version": "1.0.0",
+  "description": "Kazifi Chrome Extension.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "32": "vite.svg"
+  },
+  "permissions": ["activeTab", "storage", "tabs", "scripting"],
+  "host_permissions": ["https://*/*", "http://*/*"]
+}
