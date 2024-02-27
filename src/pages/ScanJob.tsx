@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import Footer from "../components/sections/Footer";
 import Navbar from "../components/sections/navbar";
 
-function ScanJob() {
+function ScanJobPage() {
   return (
-    <div className="flex flex-col bg-white rounded-lg border border-solid shadow-sm border-stone-200 max-w-[393px]">
+    <div className="flex flex-col bg-white rounded-2xl border border-solid shadow-sm border-stone-200 w-[393px]">
       <Navbar />
       <div className=" flex flex-col w-full p-3">
-        <div className="flex flex-col px-7 py-1 mt-6 text-center">
+        <div className="text-2xl font-semibold text-center text-slate-950">
           <div className="text-2xl font-semibold text-center whitespace-nowrap text-slate-950">
             Senior Front-End Developer
           </div>
@@ -30,9 +31,12 @@ function ScanJob() {
             <div className="mt-2 text-xs">Max file size: 10 MB</div>
           </div>
         </div>
-        <button className="justify-center items-center px-16 py-3 mt-4 w-full text-xs leading-6 text-white text-center whitespace-nowrap rounded-md bg-slate-900">
+        <Link
+          to="/results"
+          className="justify-center items-center px-16 py-3 mt-4 w-full text-xs leading-6 text-white text-center whitespace-nowrap rounded-md bg-slate-900"
+        >
           Analyze Resume
-        </button>
+        </Link>
         <div className="flex flex-col justify-center px-1.5 mt-8 w-full text-sm font-semibold text-slate-950">
           <div className="flex z-10 flex-col">
             <div className="whitespace-nowrap">About The Job</div>
@@ -113,4 +117,4 @@ function ScanJob() {
   );
 }
 
-export default ScanJob;
+export default ScanJobPage;
