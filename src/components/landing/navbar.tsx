@@ -111,7 +111,7 @@ const Navbar = () => {
               </a>
               <div className="flex items-center gap-x-2 sm:ms-auto">
                 <a
-                  className="inline-flex items-center gap-x-2  font-medium px-5 py-3 justify-center bg-purple-200 border border-black border-solid rounded-full text-lg hover:bg-lime-400 dark:text-gray-400 dark:hover:bg-lime-400"
+                  className="inline-flex whitespace-nowrap  items-center gap-x-2  font-medium px-5 py-3 justify-center bg-purple-200 border border-black border-solid rounded-full text-lg hover:bg-lime-400 dark:text-gray-400 dark:hover:bg-lime-400"
                   href="#"
                 >
                   Join The WishList

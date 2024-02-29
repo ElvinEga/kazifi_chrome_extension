@@ -30,10 +30,10 @@ const Hero = () => {
               />
               {/* Title */}
               <div className="block ">
-                <h1 className=" text-gray-800 text-4xl font-bold max md:text-5xl lg:text-7xl dark:text-gray-200">
+                <h1 className=" text-gray-800 text-6xl font-bold max md:text-6xl lg:text-7xl dark:text-gray-200">
                   Goodbye To Boring Job Resume
                 </h1>
-                <h1 className="pt-8 text-gray-800 text-4xl font-bold max md:text-5xl lg:text-7xl dark:text-gray-200">
+                <h1 className="pt-8 text-gray-800 text-5xl font-bold max md:text-6xl lg:text-7xl dark:text-gray-200">
                   & Hello To Quick, Accurate ATS.
                 </h1>
               </div>

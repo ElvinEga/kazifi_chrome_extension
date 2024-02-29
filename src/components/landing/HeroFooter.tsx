@@ -7,7 +7,7 @@ const HeroFooter = () => {
   return (
     <>
       {/* Grid */}
-      <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-6 w-full mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 w-full mt-10">
         {/* Card */}
         <a
           className="group col-span-1 relative block rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
@@ -31,7 +31,7 @@ const HeroFooter = () => {
               {/* End Avatar */}
             </div>
           </div>
-          <div className="absolute bottom-14 inset-x-0 z-10">
+          <div className="absolute bottom-0 inset-x-0 z-10">
             <div className="flex flex-col h-full p-4 sm:p-6">
               <h3 className="text-lg sm:text-gl font-semibold text-purple-200 group-hover:text-white/[.8]">
                 Start Now!
@@ -92,10 +92,10 @@ const HeroFooter = () => {
               {/* End Avatar */}
             </div>
           </div>
-          <div className="absolute bottom-14 inset-x-0 z-10">
+          <div className="absolute bottom-0 inset-x-0 z-10">
             <div className="flex flex-col h-full p-4 sm:p-6">
-              <h3 className="text-lg sm:text-gl font-semibold text-purple-200 group-hover:text-white/[.8]">
-                Manage Now!
+              <h3 className="text-lg sm:text-gl font-semibold text-lime-200 group-hover:text-white/[.8]">
+                Sign Up
               </h3>
             </div>
           </div>
