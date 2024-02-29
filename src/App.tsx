@@ -11,7 +11,7 @@ function App() {
       <Routes>
         {/* public routes */}
         <Route path="/" element={<LandingPage />} />
-        <Route path="/landing" element={<HomePage />} />
+        <Route path="/extension" element={<HomePage />} />
         <Route path="/scan" element={<ScanJobPage />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
