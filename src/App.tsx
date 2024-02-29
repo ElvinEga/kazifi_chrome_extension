@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import ScanJobPage from "./pages/ScanJob";
 import ResultsPage from "./pages/Results";
-import LandingPage from "./pages/LandingPsge";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
