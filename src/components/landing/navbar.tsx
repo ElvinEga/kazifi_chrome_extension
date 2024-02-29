@@ -1,26 +1,23 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
 const Navbar = () => {
-  const [isSticky, setIsSticky] = useState(false);
+  // const [setIsSticky] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-  const handleScroll = () => {
-    const scrollPosition = window.pageYOffset;
-    if (scrollPosition > 50) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  };
+  // const handleScroll = () => {
+  //   const scrollPosition = window.pageYOffset;
+  //   if (scrollPosition > 50) {
+  //     setIsSticky(true);
+  //   } else {
+  //     setIsSticky(false);
+  //   }
+  // };
 
   return (
     <>

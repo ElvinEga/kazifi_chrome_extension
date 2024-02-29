@@ -1,7 +1,5 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import HeroFooter from "./HeroFooter";
 
 const Hero = () => {
