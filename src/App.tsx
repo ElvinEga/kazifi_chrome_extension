@@ -1,15 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/Home";
 import ScanJobPage from "./pages/ScanJob";
 import ResultsPage from "./pages/Results";
+import LandingPage from "./pages/LandingPsge";
 
 function App() {
   return (
     <>
       <Routes>
         {/* public routes */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/scan" element={<ScanJobPage />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
