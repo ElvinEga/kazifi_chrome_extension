@@ -9,6 +9,16 @@
   "icons": {
     "32": "vite.svg"
   },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ],
   "permissions": ["activeTab", "storage", "tabs", "scripting"],
   "host_permissions": ["https://*/*", "http://*/*"]
 }
