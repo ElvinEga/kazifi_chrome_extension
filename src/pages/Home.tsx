@@ -18,6 +18,7 @@ function HomePage() {
   const [jobDescription, setJobDescription] = useState("");
   const [jobName, setJobName] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [jobUrl, setJobUrl] = useState("");
   const navigate = useNavigate();
   const [jobDetails, setJobDetails] = useState<LinkedinJob | null>(null);
 
@@ -26,34 +27,23 @@ function HomePage() {
       jobDescription: jobDescription,
       jobName: jobName,
       companyName: companyName,
+      jobUrl: jobUrl,
     };
-    navigate("/extension/scan", { state: inputData });
+    navigate("/scan", { state: inputData });
   };
-  const changeColorOnClick = async () => {
-    const [tab] = await chrome.tabs.query({
-      active: true,
-      currentWindow: true,
-    });
-    chrome.scripting.executeScript({
-      target: { tabId: tab.id! },
-      func: () => {
-        document.body.style.backgroundColor = "green";
-      },
-    });
-  };
-  useEffect(() => {
-    const handleMessage = (message: any) => {
-      setJobDetails(message.message);
-      console.log(message.message);
-    };
 
-    chrome.runtime.onMessage.addListener(handleMessage);
+  // useEffect(() => {
+  //   const handleMessage = (message: any) => {
+  //     setJobDetails(message.message);
+  //     console.log(message.message);
+  //   };
 
-    // Cleanup listener on component unmount
-    return () => {
-      chrome.runtime.onMessage.removeListener(handleMessage);
-    };
-  }, []);
+  //   chrome.runtime.onMessage.addListener(handleMessage);
+
+  //   return () => {
+  //     chrome.runtime.onMessage.removeListener(handleMessage);
+  //   };
+  // }, []);
   return (
     <>
       <div className="flex flex-col items-center bg-white rounded-2xl border border-solid shadow-sm border-stone-20 w-[393px]">
@@ -81,7 +71,7 @@ function HomePage() {
                   id="input-job-label"
                   defaultValue={jobDetails?.title}
                   onChange={(e) => setJobName(e.target.value)}
-                  className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                  className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   placeholder="Job Title"
                 />
               </div>
@@ -94,8 +84,21 @@ function HomePage() {
                   id="input-company-label"
                   defaultValue={jobDetails?.companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                  className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   placeholder="Company"
+                />
+              </div>
+              <div className="w-full mt-3">
+                <label htmlFor="input-url" className="sr-only">
+                  Job Url
+                </label>
+                <input
+                  type="text"
+                  id="input-url"
+                  defaultValue={jobDetails?.url}
+                  onChange={(e) => setJobUrl(e.target.value)}
+                  className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                  placeholder="Job Url"
                 />
               </div>
             </div>
@@ -316,7 +319,7 @@ function HomePage() {
           </div>
 
           <button
-            onClick={changeColorOnClick}
+            onClick={handleScan}
             className=" px-16 py-4 w-full inline-flex justify-center items-center gap-5 mt-12 text-base font-semibold text-center text-gray-900 shadow-sm is-caribbean-green rounded-full"
           >
             Scan Job

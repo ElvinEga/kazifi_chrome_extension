@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import ScanJobPage from "./pages/ScanJob";
 import ResultsPage from "./pages/Results";
 import HomePage from "./pages/Home";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   return (
