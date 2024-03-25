@@ -61,7 +61,10 @@ function ScanJobPage() {
                   About The Job
                 </h1>
 
-                <div className="mt-2 text-xs"> {inputData.jobDescription}</div>
+                <div
+                  className="mt-2 text-xs prose"
+                  dangerouslySetInnerHTML={{ __html: inputData.jobDescription }}
+                />
               </div>
             )}
           </div>
