@@ -17,19 +17,47 @@ function ResultsPage() {
         <div className="mt-5 w-full text-sm font-semibold text-center text-slate-950">
           Match Rate
         </div>
-        <div className="flex justify-center items-center px-2.5 mt-4 text-5xl font-semibold tracking-wide text-gray-800 whitespace-nowrap bg-white shadow-lg aspect-square rounded-[999px] w-[220px]">
-          <div className="flex justify-center items-center border-solid aspect-square border-[10px] border-[color:var(--charts-circles-pie-chart-border-color,#E5E7EB)] rounded-[999px]">
-            <div className="overflow-hidden relative flex-col justify-center items-center px-12 py-5 bg-yellow-500 rounded-full aspect-square">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/077648714a87155bfd5539ccaa29e8bca841449198ae28e731890fb740e1f031?"
-                className="object-cover absolute inset-0 size-full"
+        {/* Circular Progress */}
+        <div className="relative size-48 mt-3">
+          <svg
+            className="size-full"
+            width={36}
+            height={36}
+            viewBox="0 0 36 36"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Background Circle */}
+            <circle
+              cx={18}
+              cy={18}
+              r={16}
+              fill="none"
+              className="stroke-current text-gray-200 dark:text-gray-700"
+              strokeWidth={3}
+            />
+            {/* Progress Circle inside a group with rotation */}
+            <g className="origin-center -rotate-90 transform">
+              <circle
+                cx={18}
+                cy={18}
+                r={16}
+                fill="none"
+                className="stroke-current text-lime-500 dark:text-lime-500"
+                strokeWidth={3}
+                strokeDasharray={100}
+                strokeDashoffset={100 - 72}
               />
-              65%
-            </div>
+            </g>
+          </svg>
+          {/* Percentage Text */}
+          <div className="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
+            <span className="text-center text-2xl font-bold text-gray-800 dark:text-white">
+              72%
+            </span>
           </div>
         </div>
-        <div className="flex flex-col self-stretch px-2.5 py-px mt-5 w-full">
+        {/* End Circular Progress */}
+        <div className="flex flex-col self-stretch px-2.5 py-px mt-2 w-full">
           <div className="text-sm font-semibold text-slate-950">Keywords</div>
           <div className="flex gap-5 justify-between px-px mt-2 w-full">
             <div className="flex gap-2 justify-between">

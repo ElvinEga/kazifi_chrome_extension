@@ -32,7 +32,7 @@ function extractJobDetails() {
     ".jobs-description-content__text"
   );
   const jobDescriptionText = jobDescriptionContainer
-    ? jobDescriptionContainer.textContent.trim()
+    ? jobDescriptionContainer.innerHTML.trim()
     : "";
 
   console.log("jobDescriptionText", jobDescriptionText);

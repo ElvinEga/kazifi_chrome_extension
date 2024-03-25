@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/sections/Footer";
 import Navbar from "../components/sections/navbar";
 import FileImporter from "../components/FileImporter";
+import AIScanner from "../components/AIScanner";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -14,6 +15,10 @@ function ScanJobPage() {
     jobName: string;
     companyName: string;
     jobUrl: string;
+  };
+  const extractText = (html: string): string => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent?.trim() || "";
   };
   return (
     <div className="flex flex-col bg-white rounded-2xl border border-solid shadow-sm border-stone-200 w-[393px]">
@@ -37,7 +42,7 @@ function ScanJobPage() {
         />
         {selectedFile && (
           <Link
-            to="/extension/results"
+            to="/results"
             className="justify-center items-center px-16 py-3 mt-4 w-full text-sm font-semibold leading-6 text-white text-center whitespace-nowrap rounded-md bg-slate-900"
           >
             Analyze Resume
@@ -64,6 +69,9 @@ function ScanJobPage() {
                 <div
                   className="mt-2 text-xs prose"
                   dangerouslySetInnerHTML={{ __html: inputData.jobDescription }}
+                />
+                <AIScanner
+                  jobDescription={extractText(inputData.jobDescription)}
                 />
               </div>
             )}
